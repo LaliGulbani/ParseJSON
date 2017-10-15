@@ -27,10 +27,12 @@ public class JsonWrapp implements Wrapp {
     }
 
     @Override
+    public List<User> getItems() {
         return jsonUsers.stream()
                 .map(gsonUser -> (User) gsonUser)
                 .collect(toList());
     }
+
 
     @Override
     public String getNextPageToken() {
